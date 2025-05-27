@@ -19,3 +19,6 @@ scrape_configs:
   #   basic_auth:
   #     username: HTTP_AUTH_USERNAME_GOES_HERE
   #     password: HTTP_AUTH_PASSWORD_GOES_HERE
+  - job_name: 'cpc-web'
+    static_configs:
+      - targets: ['web.railway.internal:8080']
