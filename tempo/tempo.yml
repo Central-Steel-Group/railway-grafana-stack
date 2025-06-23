@@ -26,7 +26,7 @@ distributor:
 
 metrics_generator:
   storage:
-    path: /var/tempo/generator/wal
+    path: /var/tempo/wal
   registry:
     external_labels:
       source: tempo
