@@ -22,6 +22,12 @@ distributor:
         http:
           endpoint: "0.0.0.0:4318"
 
+metrics_generator:
+  storage:
+    path: /var/tempo/generator/wal
+  registry:
+    external_labels:
+      source: tempo
 
 overrides:
   defaults:
