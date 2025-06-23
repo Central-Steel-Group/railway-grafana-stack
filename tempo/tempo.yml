@@ -30,6 +30,12 @@ metrics_generator:
   registry:
     external_labels:
       source: tempo
+  traces_storage:
+    path: /var/tempo/traces
+  processor:
+    local_blocks:
+      filter_server_spans: false
+      flush_to_storage: true
 
 overrides:
   defaults:
