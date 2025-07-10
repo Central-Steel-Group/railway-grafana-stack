@@ -9,3 +9,7 @@ scrape_configs:
   - job_name: 'cpc-web'
     static_configs:
       - targets: ['web.railway.internal:8080']
+
+  - job_name: 'opentelemetry'
+    static_configs:
+      - targets: ['otel-collector.railway.internal:9464']
