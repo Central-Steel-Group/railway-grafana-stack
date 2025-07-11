@@ -15,5 +15,6 @@ scrape_configs:
       - targets: ['otel-collector.railway.internal:9464']
 
   - job_name: 'dramatiq'
+    metrics_path: /
     static_configs:
       - targets: ['worker.railway.internal:9191'] 
