@@ -15,7 +15,7 @@ storage:
 
 distributor:
   log_received_spans:
-        enabled: true
+        enabled: false
   receivers:
     otlp:
       protocols:
@@ -42,3 +42,7 @@ overrides:
     metrics_generator:
       processors: [service-graphs, span-metrics, local-blocks] # enables metrics generator
       generate_native_histograms: both
+
+query_frontend:
+  search:
+    max_duration: 168h
