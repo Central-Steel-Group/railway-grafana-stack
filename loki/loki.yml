@@ -20,7 +20,10 @@ common:
   path_prefix: /loki/data
 
 ingester:
-  flush_on_shutdown: true
+  wal:
+    enabled: true
+    dir: /loki/wal
+    flush_on_shutdown: true
 
 schema_config:
   configs:
