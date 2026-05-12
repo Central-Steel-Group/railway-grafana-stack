@@ -3,6 +3,12 @@ auth_enabled: false
 server:
   http_listen_port: 3100
   log_level: info
+  # Increased to stop the 5.002s DeadlineExceeded errors
+  http_server_write_timeout: 1m
+
+ingester_client:
+  # FIX: Extends the internal 5s watchdog to 15s
+  remote_timeout: 15s
 
 common:
   ring:
@@ -10,7 +16,11 @@ common:
     kvstore:
       store: inmemory
   replication_factor: 1
-  path_prefix: /loki
+  # Move data to a subfolder to avoid root-level collisions
+  path_prefix: /loki/data
+
+ingester:
+  flush_on_shutdown: true
 
 schema_config:
   configs:
